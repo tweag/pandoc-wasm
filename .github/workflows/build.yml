@@ -42,6 +42,15 @@ jobs:
           ref: wasm
           path: pandoc
 
+      - name: wasm-cabal-cache
+        uses: actions/cache@v3
+        with:
+          key: wasm-cabal-cache-${{ github.run_id }}
+          restore-keys: wasm-cabal-cache-
+          path: |
+            ~/.ghc-wasm/.cabal/store
+            pandoc/dist-newstyle
+
       - name: build
         run: |
           pushd pandoc
