@@ -37,6 +37,9 @@ jobs:
 
       - name: checkout
         uses: actions/checkout@v4
+
+      - name: checkout
+        uses: actions/checkout@v4
         with:
           repository: TerrorJack/pandoc
           ref: wasm
@@ -57,10 +60,11 @@ jobs:
           wasm32-wasi-cabal build pandoc-cli
           popd
 
-      - name: wasm-opt
+      - name: dist
         run: |
           mkdir dist
           wasm-opt --low-memory-unused --converge --gufa --flatten --rereloop -Oz $(find pandoc -type f -name pandoc.wasm) -o dist/pandoc.wasm
+          cp frontend/*.html frontend/*.js dist
 
       - name: test
         run: |
