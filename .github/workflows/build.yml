@@ -68,7 +68,7 @@ jobs:
 
       - name: test
         run: |
-          $CROSS_EMULATOR dist/pandoc.wasm pandoc/README.md -o pandoc/README.rst
+          wasmtime run --dir $PWD::/ -- dist/pandoc.wasm pandoc/README.md -o pandoc/README.rst
           head --lines=20 pandoc/README.rst
 
       - name: upload-pages-artifact
