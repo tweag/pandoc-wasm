@@ -23,8 +23,8 @@ jobs:
           cabal path --installdir >> "$GITHUB_PATH"
           cabal update
           cabal install \
-            alex-3.5.1.0 \
-            happy-2.1.3
+            alex \
+            happy
           popd
 
       - name: setup-ghc-wasm
