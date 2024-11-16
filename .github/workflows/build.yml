@@ -45,10 +45,16 @@ jobs:
           ref: wasm
           path: pandoc
 
+      - name: gen-plan-json
+        run: |
+          pushd pandoc
+          wasm32-wasi-cabal build pandoc-cli --dry-run
+          popd
+
       - name: wasm-cabal-cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
-          key: wasm-cabal-cache-${{ github.run_id }}
+          key: wasm-cabal-cache-${{ hashFiles('pandoc/dist-newstyle/cache/plan.json') }}
           restore-keys: wasm-cabal-cache-
           path: |
             ~/.ghc-wasm/.cabal/store
