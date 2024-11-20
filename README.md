@@ -28,9 +28,9 @@ non-official) backports for ghc wasm backend's Template Haskell & ghci
 support.
 
 It's built using my
-[fork](https://github.com/TerrorJack/pandoc/tree/wasm) which is based
-on latest `pandoc` release and patches dependencies, cabal config as
-well as some module code to make things compilable to wasm:
+[fork](https://github.com/haskell-wasm/pandoc/tree/wasm) which is
+based on latest `pandoc` release and patches dependencies, cabal
+config as well as some module code to make things compilable to wasm:
 
 - No http client/server functionality. `wasip1` doesn't have proper
   sockets support anyway, and support for future versions of wasi is

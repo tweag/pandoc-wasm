@@ -41,7 +41,7 @@ jobs:
       - name: checkout
         uses: actions/checkout@v4
         with:
-          repository: TerrorJack/pandoc
+          repository: haskell-wasm/pandoc
           ref: wasm
           path: pandoc
 
