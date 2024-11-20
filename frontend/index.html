@@ -56,7 +56,11 @@
   </head>
   <body>
     <div id="container">
-      <textarea id="input" placeholder="Enter your input here..."></textarea>
+      <textarea
+        id="input"
+        readonly
+        placeholder="Loading wasm module..."
+      ></textarea>
       <textarea
         id="output"
         readonly
@@ -68,6 +72,9 @@
     </div>
     <script type="module">
       import { pandoc } from "./index.js";
+
+      document.getElementById("input").readOnly = false;
+      document.getElementById("input").placeholder = "Enter your input here...";
 
       async function updateOutput() {
         const inputText = document.getElementById("input").value;
