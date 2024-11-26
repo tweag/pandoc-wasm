@@ -22,7 +22,7 @@ the ghc wasm backend.
 
 `pandoc.wasm` is built with 9.12 flavour of ghc wasm backend in CI,
 which can be installed via
-[`ghc-wasm-meta`](https://gitlab.haskell.org/ghc/ghc-wasm-meta). You
+[`ghc-wasm-meta`](https://gitlab.haskell.org/haskell-wasm/ghc-wasm-meta). You
 need at least 9.10 since it's the earliest major version with (my
 non-official) backports for ghc wasm backend's Template Haskell & ghci
 support.
